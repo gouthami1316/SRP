@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="left">
+                <div class="g-form">
+                    <img src="google.png" width="70">
+                    <h3>Create your Google Account</h3>
+                    <form>
+                        <input type="text" name="" placeholder="First name">
+                        <input type="text" name="" placeholder="Last name">
+                        <input type="email" name="" placeholder="Email">
+                        <span>
+                            You can use letters, numbers & periods
+                        </span>
+                        <br>
+                        <a href="SignIn.html">Use my current email address instead</a>
+                        <input type="password" name=" " placeholder="Password" required id="pwrd">
+                        <input type="password" name=" " placeholder="Confirm" required id="cpwrd">
+                        <span>
+                           Use 8 or more characters with a mix of letters, numbers & symbols
+                        </span>
+                        <br>
+                        <input type="checkbox" name="" class="checkbox" onclick="show()">
+                            &nbsp;Show password
+                            <div class="b-links">
+                                <a href="SignIn.html">Sign in instead</a>
+                                <input type="submit" id="next" value="Next" onclick="openpopup()">
+                            </div>
+                    </form>
+                </div>
+            </div>
+            <div class="right">
+                <img src="spimg.png" alt="hello">
+                <p>One account. All of Google working for you.</p>
+            </div>
+        </div>
+    </header>
+    <div class="popup" id="popup">
+        <img src="confirm.png">
+        <h2>Sign Up Success</h2>
+        <button type="button" onclick="closepopup()">OK</button>
+    </div>
+    <script type="text/javascript">
+        function show(){
+            var pwrd=document.getElementById("pwrd");
+            var cpwrd=document.getElementById("cpwrd");
+            if(pwrd.type==="password" && cpwrd.type==="password"){
+                pwrd.type="text";
+                cpwrd.type="text";
+            }
+            else{
+                pwrd.type="password";
+                cpwrd.type="password";
+            }
+        }   
+        let popup=document.getElementById("popup");
+            function openpopup(){
+                popup.classList.add("open-popup");
+            }
+            function closepopup(){
+                popup.classList.remove("open-popup");
+            }
+    </script>
+    
+</body>
+</html>
